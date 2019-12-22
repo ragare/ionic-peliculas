@@ -105,3 +105,26 @@ export interface Cast {
     order: number;
     profile_path?: string;
 }
+export interface ResultadosBuscar {
+    page: number;
+    total_results: number;
+    total_pages: number;
+    results: ResultadoBusqueda[];
+}
+
+export interface ResultadoBusqueda {
+    popularity: number;
+    id: number;
+    video: boolean;
+    vote_count: number;
+    vote_average: number;
+    title: string;
+    release_date: string;
+    original_language: string;
+    original_title: string;
+    genre_ids: number[];
+    backdrop_path?: string;
+    adult: boolean;
+    overview: string;
+    poster_path?: string;
+}

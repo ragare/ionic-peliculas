@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RespuestaMDB, PeliculaDetalle, RespuestaCredits } from '../interfaces/interfaces';
+import { RespuestaMDB, PeliculaDetalle, RespuestaCredits, ResultadosBuscar } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
 
 const URL = environment.url;
@@ -45,5 +45,9 @@ export class MoviesService {
 
   getActoresPelicula(id: string) {
     return this.ejecutarQuery<RespuestaCredits>(`/movie/${id}/credits?a=1`);
+  }
+
+  buscarPeliculas(textoBuscar: string) {
+    return this.ejecutarQuery<ResultadosBuscar>(`/search/movie/?query=${textoBuscar}`);
   }
 }
