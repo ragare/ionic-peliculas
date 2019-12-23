@@ -49,7 +49,7 @@ export class DataLocalService {
     return (existe) ? true : false;
   }
 
-  private async presentToast(message) {
+    private async presentToast(message) {
     const toast = await this.toastCtrl.create({
       message,
       duration: 2000
