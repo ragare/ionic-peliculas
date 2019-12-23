@@ -21,6 +21,11 @@ export class Tab3Page implements OnInit {
     ) {}
 
   async ngOnInit() {
+
+  }
+
+  async ionViewWillEnter() {
+    console.log('WillEntyer');
     this.peliculas = await this.dataLocalService.cargarFavoritos();
     this.generos = await this.movieService.cargarGeneros();
     this.cargarPeliculasPorGenero(this.generos, this.peliculas);
